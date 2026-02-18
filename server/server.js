@@ -24,6 +24,11 @@ app.get('/usuarios', async (req, res) => {
 
 })
 
+// Rota raiz que redireciona automaticamente para a listagem de usuários
+app.get('/', (req, res) => {
+    res.redirect('/usuarios');
+});
+
 // Rota para cadastrar um novo usuário no MongoDB via Prisma
 app.post('/usuarios', async (req, res) => {
 
