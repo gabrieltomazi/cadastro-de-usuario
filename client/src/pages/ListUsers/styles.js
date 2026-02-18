@@ -54,3 +54,18 @@ export const DivUser = styled.div`
 `
 
 
+export const DivParagraph = styled.div`
+    color: white;
+    background-color: #22283F;
+    height: 150px;
+    max-width: 50vw;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    color: white;
+    font-weight: 200;
+    margin: 6.8rem;
+`
+
+

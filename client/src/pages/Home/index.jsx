@@ -1,11 +1,9 @@
-import { Container, DivTwo, DivForm, DivSpan, Input } from "./styles"
+import { DivTwo, DivForm, DivSpan, Input, Container } from "./styles"
 import DefaultButton from '../../components/Button/'
-import Trash from "../../assets/trash.svg"
 import { useRef } from "react"
 import api from "../../services/api"
 import TopBackground from "../../components/TopBackground"
 import { useNavigate } from "react-router-dom"
-import { Button } from "../../components/Button/styles"
 import Title from "../../components/Title"
 
 function Home() {
@@ -33,7 +31,7 @@ function Home() {
 
   return (
 
-    <Container>
+    <Container >
       <TopBackground />
 
       <DivForm>
