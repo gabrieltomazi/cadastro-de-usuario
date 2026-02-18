@@ -1,8 +1,7 @@
-import { Container } from "../Home/styles"
 import api from '../../services/api'
 import { useEffect, useState } from "react"
 import TopBackground from "../../components/TopBackground"
-import { DivGrid, DivUser } from "./styles"
+import { ContainerList, DivGrid, DivUser } from "./styles"
 import { useNavigate } from "react-router-dom"
 import Title from "../../components/Title"
 import Trash from "../../assets/trash.svg"
@@ -41,7 +40,7 @@ function ListUsers() {
 
 
     return (
-        <Container style={{ height: '100%' }}>
+        <ContainerList>
             <TopBackground />
 
             <Title>Lista de Usuários</Title>
@@ -68,7 +67,7 @@ function ListUsers() {
 
 
 
-        </Container>
+        </ContainerList>
     )
 
 }

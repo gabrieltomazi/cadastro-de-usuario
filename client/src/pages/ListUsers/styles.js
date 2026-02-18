@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
 
+export const ContainerList = styled.div`
+    background-color: #171E34;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+`
+
 export const DivGrid = styled.div`
     display: grid;
     height: 100%;
