@@ -42,9 +42,15 @@ function ListUsers() {
 
     // Função para deletar usuários pelo ID 
     async function deleteUser(id) {
-        await api.delete(`/usuarios/${id}`)
-        getUsers()
-        alert("Usuário deletado com sucesso!")
+        try {
+            await api.delete(`/usuarios/${id}`)
+            await getUsers()
+            alert("Usuário deletado com sucesso!")
+
+        } catch (error) {
+            console.error("Erro ao deletar usuário:", error);
+            alert("Ocorreu um erro ao tentar deletar o usuário. Tente novamente.");
+        }
     }
 
 
