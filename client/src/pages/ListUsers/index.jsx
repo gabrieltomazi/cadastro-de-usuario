@@ -44,7 +44,8 @@ function ListUsers() {
     async function deleteUser(id) {
         try {
             await api.delete(`/usuarios/${id}`)
-            await getUsers()
+            const updatedUser = users.filter(user => user.id !== id)
+            setUsers(updatedUser)
             alert("Usuário deletado com sucesso!")
 
         } catch (error) {
