@@ -4,25 +4,38 @@ import styled from "styled-components";
 export const ContainerList = styled.div`
     background-color: #171E34;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    overflow: hidden;
     
 `
 
 export const DivGrid = styled.div`
     display: grid;
-    height: 100%;
-    gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 3rem;
+
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+
+    margin: 40px auto;
+
+    
+    @media (max-width: 1020px) {
+        grid-template-columns: 1fr 1fr;
+    }   
+    @media (max-width: 710px) {
+        grid-template-columns: 1fr;
+    }   
 `
 
 export const DivUser = styled.div`
     background-color: #22283F;
     height: 150px;
-    max-width: 600px;
+    width: 100%;
     padding: 15px;
     display: flex;
     align-items: center;
@@ -57,15 +70,16 @@ export const DivUser = styled.div`
 export const DivParagraph = styled.div`
     color: white;
     background-color: #22283F;
-    height: 150px;
-    max-width: 50vw;
-    padding: 15px;
+    padding: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 30px;
-    color: white;
-    font-weight: 200;
-    margin: 6.8rem;
+    margin-top: 50px; 
+    width: 90%;
+    max-width: 600px; 
+    text-align: center;
+    margin-bottom: 2rem;
 `
 
 

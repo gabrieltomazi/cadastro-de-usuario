@@ -23,7 +23,7 @@ function ListUsers() {
             const { data } = await api.get('/usuarios')
             setUsers(data)
 
-        } catch (error) {
+        } catch {
             setError("Não foi possível conectar ao servidor. Verifique se o backend no Render está online.")
         } finally {
             setLoading(false)
@@ -59,7 +59,7 @@ function ListUsers() {
 
 
     return (
-        <ContainerList users={users}>
+        <ContainerList>
             <TopBackground />
 
             <Title>Lista de Usuários</Title>
@@ -76,27 +76,26 @@ function ListUsers() {
                     <p style={{ color: 'red' }}>{error}</p>
                 </DivParagraph>
             ) : users.length > 0 ? (
-                users.map((user) => (
-                    <DivGrid>
+                <DivGrid>
+                    {users.map((user) => (
                         <DivUser key={user.id}>
                             <img src={`https://ui-avatars.com/api/?name=${user.name}`} alt="imagem-usuarios" />
 
-
                             <div className="divNames">
                                 <p className="name">{user.name}</p>
-                                <p className="age">{user.age}</p>
+                                <p className="age">{user.age} anos</p>
                                 <p className="email">{user.email}</p>
                             </div>
+
                             <img onClick={() => deleteUser(user.id)} className="trash" src={Trash} alt="imagem-lixo" />
                         </DivUser>
-                    </DivGrid>
-                ))
+                    ))}
+                </DivGrid>
             ) : (
                 <DivParagraph>
-                    <p> Nenhum usuário encontrado  </p>
-                </DivParagraph>)
-
-            }
+                    <p>Nenhum usuário encontrado</p>
+                </DivParagraph>
+            )}
 
 
             <Button style={{ marginBottom: '10px' }} onClick={() => navigate('/')}>Voltar</Button>
